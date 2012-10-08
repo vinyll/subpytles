@@ -31,6 +31,13 @@ class SrtEditor(object):
             output.append((id, start, end, text))
         self.contents = output
 
+    def slice(self, start_time=None, end_time=None):
+        output = []
+        for (id, start, end, text) in self.contents:
+            if (not start_time or start_time <= start) and (not end_time or end_time >= end):
+                output.append((id, start, end, text))
+        self.contents = output
+
     @property
     def content(self):
         output = ""

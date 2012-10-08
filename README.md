@@ -5,15 +5,48 @@ The purpose of this project is to delay the subtitles of a srt file that does no
 As of now you can :
 
 - delay subtitles appearance for the whole file
+- slice out a part of a file and optionnaly apply a delay on it
 
 
 # How to use
 
-just run :
+## Arguments
 
-    ./subpytles.py --delay 6000 /path/to/your/file.srt > my-output-file.srt
+    positional arguments:
+      filepath    Path of srt file
+      
+    optional arguments:
+      -h, --help  show this help message and exit
+      --delay -d  Delay in milliseconds, positive or negative
+      --start -s  Treat subtitles from this time
+      --end -e    Treat subtitles until this time
 
-and you'll have a new "my-output-file.srt" with subtitles delayed of 6 seconds (6000 milliseconds).
+
+## Usage examples
+
+Output subtitles and forward them of 6 seconds
+
+    ./subpytles.py --delay 6000 /path/to/your/file.srt
+
+Output subtitles and backward them of 8 seconds. Save it into a new file called _updated_subtitles.srt_
+
+    ./subpytles.py --delay -8000 /path/to/your/file.srt > updated_subtitles.srt
+
+Extract subtitles after time 0:01:41
+
+    ./subpytles.py --start=0:01:41 fixtures/subtitles.srt
+
+Extract subtitles between time 0:01:41 and 0:01:43,400
+
+    ./subpytles.py --start=0:01:41 --end=0:01:43,400 fixtures/subtitles.srt
+
+Extract subtitles between time 0:01:41 and 0:01:43,400 and apply a delay onto it
+
+    ./subpytles.py --delay=5000 --start=0:01:41 --end=0:01:43,400 fixtures/subtitles.srt
+
+Extract subtitles between time 0:01:41 and 0:01:43,400. Apply a delay onto it. Save it into _updated_subtitles.srt_
+
+    ./subpytles.py --delay=5000 --start=0:01:41 --end=0:01:43,400 fixtures/subtitles.srt > updated_subtitles.srt
 
 
 # FAQ
