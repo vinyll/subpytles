@@ -1,20 +1,23 @@
-Subpytles allows you to edit your ".srt" subtitles file to delay all of it.
+# Subpytles – python subtitles time editing
+
+Subpytles allows you to edit your ".srt" subtitles file to delay all of them directly from the terminal.
 
 The purpose of this project is to delay the subtitles of a srt file that does not exactly match the movie timing.
 
-As of now you can :
+Test status: [![Travis tests](https://travis-ci.org/vinyll/subpytles.svg)](https://travis-ci.org/vinyll/subpytles)
+
+
+## Features
 
 - delay subtitles appearance for the whole file
-- slice out a part of a file and optionnaly apply a delay on it
+- slice out a part of a file and optionnaly apply a delay on it.
 
 
-# How to use
-
-## Arguments
+## Usage
 
     positional arguments:
       filepath    Path of srt file
-      
+
     optional arguments:
       -h, --help  show this help message and exit
       --delay -d  Delay in milliseconds, positive or negative
@@ -22,7 +25,7 @@ As of now you can :
       --end -e    Treat subtitles until this time
 
 
-## Usage examples
+## Examples
 
 Output subtitles and forward them of 6 seconds
 
@@ -49,12 +52,12 @@ Extract subtitles between time 0:01:41 and 0:01:43,400. Apply a delay onto it. S
     ./subpytles.py --delay=5000 --start=0:01:41 --end=0:01:43,400 fixtures/subtitles.srt > updated_subtitles.srt
 
 
-# FAQ
+## FAQ
 
-### How to know how much time to delay ?
+### How to know how much time to delay?
 
 Use the great VLC player and press "h" and "j" keys to delay subtitles. VLC will display the delay in milliseconds. That's the information you need for this script.
 
-### What systems are supported ?
+### What systems are supported?
 
-Mac OS and Linux (actually all Unix based system with python)
+Mac OS and Linux (actually all Unix based system with python).
