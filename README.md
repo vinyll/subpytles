@@ -6,6 +6,8 @@ The purpose of this project is to delay the subtitles of a srt file that does no
 
 Test status: [![Travis tests](https://travis-ci.org/vinyll/subpytles.svg)](https://travis-ci.org/vinyll/subpytles)
 
+> This version is for python3.
+> If you are using python2 checkout the [python2 branch](https://github.com/vinyll/subpytles/tree/python2).
 
 ## Features
 

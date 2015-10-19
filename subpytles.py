@@ -15,7 +15,7 @@ args = parser.parse_args()
 
 filepath = os.path.realpath(args.filepath)
 
-content = file(filepath).read()
+content = open(filepath).read()
 editor = SrtEditor(content)
 if args.delay:
     editor.delay(args.delay)

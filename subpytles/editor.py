@@ -9,9 +9,10 @@ row_format = "%(id)s\r\n%(start)s --> %(end)s\r\n%(text)s\r\n\r\n"
 class SrtEditor(object):
 
     def __init__(self, content, *args, **kwargs):
+        content = content.replace('\r', '')
         time_format="\d+:\d+:\d+,\d+"
         rows = re.findall(
-            r'(\d+)\r\n(%(time_format)s) --> (%(time_format)s)\r\n(.+)\r\n\r\n' % locals(),
+            r'(\d+)\n(%(time_format)s) --> (%(time_format)s)\n(.+)\n\n' % locals(),
             content)
         self.time_format = time_format
         self.contents = rows
