@@ -27,7 +27,7 @@ class SrtEditor(object):
         content = content.replace('\r', '')
         time_format="\d+:\d+:\d+,\d+"
         rows = re.findall(
-            r'(\d+)\n(%(time_format)s) --> (%(time_format)s)\n(.+)\n\n' % locals(),
+            r'(\d+)\n(%(time_format)s) --> (%(time_format)s)\n(.+)[\n\n]?' % locals(),
             content)
         self.time_format = time_format
         self.contents = rows
