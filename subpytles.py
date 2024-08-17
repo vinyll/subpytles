@@ -22,4 +22,4 @@ if args.delay:
 if args.start or args.end:
     editor.slice(start_time=args.start, end_time=args.end)
 
-print editor.content
+print(editor.content)

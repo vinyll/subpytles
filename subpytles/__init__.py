@@ -1,1 +1,1 @@
-from editor import SrtEditor
+from .editor import SrtEditor
